@@ -97,6 +97,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.github.TotalFreedom.TF-WorldEdit</groupId>
+            <artifactId>worldedit-core</artifactId>
+            <version>6.1.0-TF</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>craftbukkit</artifactId>
             <version>1.11.2-R0.1-SNAPSHOT</version>
