@@ -122,12 +122,11 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.github.TotalFreedom</groupId>
-            <artifactId>TF-LibsDisguises</artifactId>
-            <version>913a577436</version>
-            <scope>provided</scope>
-        </dependency>
+       	<dependency>
+	    <groupId>com.github.TotalFreedom</groupId>
+	    <artifactId>TF-LibsDisguises</artifactId>
+	    <version>-SNAPSHOT</version>
+	</dependency>
     </dependencies>
 
     <build>
