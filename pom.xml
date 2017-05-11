@@ -123,11 +123,10 @@
         </dependency>
 
         <dependency>
-	    <groupId>com.github.TotalFreedom</groupId>
-	    <artifactId>TF-LibsDisguises</artifactId>
-	    <version>1.11-SNAPSHOT</version>
-             <scope>provided</scope>
-	</dependency>
+            <groupId>com.github.Wild1145</groupId>
+            <artifactId>TF-LibsDisguises</artifactId>
+            <version>1.11.2-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
