@@ -46,7 +46,7 @@ public class TotalFreedomMod extends AeroPlugin<TotalFreedomMod>
 
     public static final String CONFIG_FILENAME = "config.yml";
     //
-    public static final BuildProperties build = new BuildProperties();
+//    public static final BuildProperties build = new BuildProperties();
     //
     public static String pluginName;
     public static String pluginVersion;
@@ -114,15 +114,16 @@ public class TotalFreedomMod extends AeroPlugin<TotalFreedomMod>
         FLog.setPluginLogger(plugin.getLogger());
         FLog.setServerLogger(server.getLogger());
 
-        build.load(plugin);
+//        build.load(plugin);
     }
 
     @Override
     public void enable()
     {
         FLog.info("Created by Madgeek1450 and Prozza");
-        FLog.info("Version " + build.formattedVersion());
-        FLog.info("Compiled " + build.date + " by " + build.author);
+        FLog.info("Updated and Maintained by Wild1145");
+//        FLog.info("Version " + build.formattedVersion());
+//        FLog.info("Compiled " + build.date + " by " + build.author);
 
         final MethodTimer timer = new MethodTimer();
         timer.start();
@@ -244,46 +245,46 @@ public class TotalFreedomMod extends AeroPlugin<TotalFreedomMod>
         FLog.info("Plugin disabled");
     }
 
-    public static class BuildProperties
-    {
-
-        public String author;
-        public String codename;
-        public String version;
-        public String number;
-        public String date;
-        public String head;
-
-        public void load(TotalFreedomMod plugin)
-        {
-            try
-            {
-                final Properties props;
-                try (InputStream in = plugin.getResource("build.properties"))
-                {
-                    props = new Properties();
-                    props.load(in);
-                }
-
-                author = props.getProperty("program.build.author", "unknown");
-                codename = props.getProperty("program.build.codename", "unknown");
-                version = props.getProperty("program.build.version", "unknown");
-                number = props.getProperty("program.build.number", "1");
-                date = props.getProperty("program.build.date", "unknown");
-                head = props.getProperty("program.build.head", "unknown");
-            }
-            catch (Exception ex)
-            {
-                FLog.severe("Could not load build properties! Did you compile with Netbeans/ANT?");
-                FLog.severe(ex);
-            }
-        }
-
-        public String formattedVersion()
-        {
-            return pluginVersion + "." + number + " (" + head + ")";
-        }
-    }
+//    public static class BuildProperties
+//    {
+//
+//        public String author;
+//        public String codename;
+//        public String version;
+//        public String number;
+//        public String date;
+//        public String head;
+//
+////        public void load(TotalFreedomMod plugin)
+////        {
+////            try
+////            {
+////                final Properties props;
+////                try (InputStream in = plugin.getResource("build.properties"))
+////                {
+////                    props = new Properties();
+////                    props.load(in);
+////                }
+////
+////                author = props.getProperty("program.build.author", "unknown");
+////                codename = props.getProperty("program.build.codename", "unknown");
+////                version = props.getProperty("program.build.version", "unknown");
+////                number = props.getProperty("program.build.number", "1");
+////                date = props.getProperty("program.build.date", "unknown");
+////                head = props.getProperty("program.build.head", "unknown");
+////            }
+////            catch (Exception ex)
+////            {
+////                FLog.severe("Could not load build properties! Did you compile with Netbeans/ANT?");
+////                FLog.severe(ex);
+////            }
+////        }
+//
+//        public String formattedVersion()
+//        {
+//            return pluginVersion + "." + number + " (" + head + ")";
+//        }
+//    }
 
     public static TotalFreedomMod plugin()
     {
