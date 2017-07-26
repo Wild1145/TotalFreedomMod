@@ -12,6 +12,9 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.block.BlockBurnEvent;
 import org.bukkit.event.block.BlockFromToEvent;
 import org.bukkit.event.block.BlockIgniteEvent;
+import org.bukkit.event.block.BlockRedstoneEvent;
+import org.bukkit.event.block.BlockPistonExtendEvent;
+import org.bukkit.event.block.BlockPistonRetractEvent;
 import org.bukkit.event.block.LeavesDecayEvent;
 import org.bukkit.event.entity.EntityCombustEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -168,5 +171,32 @@ public class EventBlocker extends FreedomService
     {
         event.setCancelled(true);
     }
+    
+    @EventHandler(priority = EventPriority.NORMAL)
+    public void BlockPistonRetractEvent(BlockPistonRetractEvent event)
+    {
+        if (!ConfigEntry.ALLOW_REDSTONE.getBoolean())
+        {
+            event.setCancelled(true);
+        }
+    }
 
+    @EventHandler(priority = EventPriority.NORMAL)
+    public void BlockPistonExtendEvent(BlockPistonExtendEvent event)
+    {
+        if (!ConfigEntry.ALLOW_REDSTONE.getBoolean())
+        {
+            event.setCancelled(true);
+        }
+    }
+
+    @EventHandler(priority = EventPriority.NORMAL)
+    public void BlockRedstoneEvent(BlockRedstoneEvent event)
+    {
+        if (!ConfigEntry.ALLOW_REDSTONE.getBoolean())
+        {
+            event.setNewCurrent(0);
+        }
+    }
+    
 }
