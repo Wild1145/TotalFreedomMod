@@ -6,6 +6,7 @@ import me.totalfreedom.totalfreedommod.FreedomService;
 import me.totalfreedom.totalfreedommod.TotalFreedomMod;
 import me.totalfreedom.totalfreedommod.util.FLog;
 import me.totalfreedom.totalfreedommod.util.FUtil;
+import net.ess3.api.IUser;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
@@ -136,4 +137,25 @@ public class EssentialsBridge extends FreedomService
         }
         return false;
     }
+
+    public Boolean isVanished(String username)
+    {
+        final User user = getEssentialsUser(username);
+        if (user != null)
+        {
+            return user.isVanished();
+        }
+        
+        return null;
+    }
+
+    public void setVanished(String username, boolean vanished)
+    {
+        final IUser user = getEssentialsUser(username);
+        if (user != null)
+        {
+            user.setVanished(vanished);
+        }
+    }
+
 }

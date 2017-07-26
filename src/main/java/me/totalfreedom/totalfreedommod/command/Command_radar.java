@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import me.totalfreedom.totalfreedommod.player.FPlayer;
 import me.totalfreedom.totalfreedommod.rank.Rank;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -25,7 +26,8 @@ public class Command_radar extends FreedomCommand
 
         for (Player player : playerSenderos.getWorld().getPlayers())
         {
-            if (!player.equals(playerSender))
+            FPlayer fPlayer = plugin.pl.getPlayer(player);
+            if (!player.equals(playerSender) && !fPlayer.isVanish())
             {
                 try
                 {
